@@ -1,11 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 using UnityEngine.Tilemaps;
 
 public class CharacterMovement : MonoBehaviour
 {
-    public Tilemap map;
+    public Tilemap groundMap;
     MouseInput mouseInput;
     [SerializeField] private float moveSpeed;
 
@@ -29,6 +30,9 @@ public class CharacterMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        var agent = GetComponent<NavMeshAgent>();
+        agent.updateRotation = false;
+        agent.updateUpAxis = false;
         destination = transform.position;
         mouseInput.Mouse.MouseClick.performed += _ => MouseClick();
     }
@@ -37,8 +41,8 @@ public class CharacterMovement : MonoBehaviour
     {
         Vector2 mousePosition = mouseInput.Mouse.MousePosition.ReadValue<Vector2>();
         mousePosition = Camera.main.ScreenToWorldPoint(mousePosition);
-        Vector3Int gridPostion = map.WorldToCell(mousePosition);
-        if(map.HasTile(gridPostion)) 
+        Vector3Int gridPostion = groundMap.WorldToCell(mousePosition);
+        if(groundMap.HasTile(gridPostion)) 
         {
             destination = mousePosition;
         }
