@@ -6,10 +6,12 @@ using UnityEngine.Tilemaps;
 
 public class CharacterMovement : MonoBehaviour
 {
-    public Tilemap groundMap;
+    [SerializeField] private Tilemap groundMap;
+    [SerializeField] private Tilemap collisionMap;
     MouseInput mouseInput;
     [SerializeField] private float moveSpeed;
-
+    
+    private Animator anim;
     private Vector3 destination;
 
     private void Awake()
@@ -18,21 +20,19 @@ public class CharacterMovement : MonoBehaviour
 
     }
 
-    private void OnEnable()
+    public void OnEnable()
     {
            mouseInput.Enable();
     }
 
-    private void OnDisable()
+    public void OnDisable()
     {
         mouseInput.Disable();
     }
     // Start is called before the first frame update
     void Start()
     {
-        var agent = GetComponent<NavMeshAgent>();
-        agent.updateRotation = false;
-        agent.updateUpAxis = false;
+        
         destination = transform.position;
         mouseInput.Mouse.MouseClick.performed += _ => MouseClick();
     }
@@ -44,13 +44,18 @@ public class CharacterMovement : MonoBehaviour
         Vector3Int gridPostion = groundMap.WorldToCell(mousePosition);
         if(groundMap.HasTile(gridPostion)) 
         {
+            
             destination = mousePosition;
+           
+            
         }
+       
     }
 
     // Update is called once per frame
     void Update()
     {
+
         if (Vector3.Distance(transform.position, destination) > 0.1f)
         {
             transform.position = Vector3.MoveTowards(transform.position, destination, moveSpeed * Time.deltaTime);
