@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.Tilemaps;
+using UnityEngine.UIElements;
 
 public class CharacterMovement : MonoBehaviour
 {
@@ -55,10 +56,27 @@ public class CharacterMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-        if (Vector3.Distance(transform.position, destination) > 0.1f)
+        CheckUI();
+        if (Vector3.Distance(transform.position, destination) > 0.01f)
         {
             transform.position = Vector3.MoveTowards(transform.position, destination, moveSpeed * Time.deltaTime);
+        }
+    }
+
+    private void OnCollisionStay2D(Collision2D collision)
+    {
+        destination = transform.position;
+    }
+
+    private void CheckUI()
+    {
+        if (MainManager.Instance.canvas.activeInHierarchy == true)
+        {
+            OnDisable();
+        }
+        else
+        {
+            OnEnable();
         }
     }
 }
