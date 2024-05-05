@@ -57,6 +57,10 @@ public class CharacterMovement : MonoBehaviour
     void Update()
     {
         CheckUI();
+        if (DialogueManager.GetInstance().dialogueIsPlaying)
+        {
+            OnDisable();
+        }
         if (Vector3.Distance(transform.position, destination) > 0.01f)
         {
             transform.position = Vector3.MoveTowards(transform.position, destination, moveSpeed * Time.deltaTime);
