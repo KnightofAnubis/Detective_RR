@@ -160,8 +160,8 @@ Camera:
   m_GameObject: {fileID: 266183465}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_ClearFlags: 2
+  m_BackGroundColor: {r: 0.21960786, g: 0.21960786, b: 0.21960786, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -1294,7 +1294,7 @@ TilemapRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0.16000003, y: 0.004999995, z: 0}
   m_MaxChunkCount: 16
@@ -7256,7 +7256,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   groundMap: {fileID: 496569699}
-  collisionMap: {fileID: 0}
+  collisionMap: {fileID: 1716766548}
   moveSpeed: 2
 --- !u!212 &1197278645
 SpriteRenderer:
@@ -7495,7 +7495,7 @@ TilemapRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 2
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 1, y: 1, z: 0}
   m_MaxChunkCount: 16
@@ -7596,7 +7596,7 @@ SceneRoots:
   m_Roots:
   - {fileID: 266183468}
   - {fileID: 1160914605}
-  - {fileID: 778035760}
   - {fileID: 1197278646}
   - {fileID: 1504807702}
   - {fileID: 918024862}
+  - {fileID: 778035760}
