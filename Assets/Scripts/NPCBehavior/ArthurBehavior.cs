@@ -5,6 +5,7 @@ using UnityEngine;
 public class ArthurBehavior : MonoBehaviour
 {
     private Animator mAnimator;
+    [SerializeField] private GameObject door;
    
     // Start is called before the first frame update
     void Start()
@@ -24,6 +25,8 @@ public class ArthurBehavior : MonoBehaviour
         {
             //Debug.Log("Exit?");
             mAnimator.SetTrigger("Exit");
+            door.SetActive(true);
+
         }
     }
 }

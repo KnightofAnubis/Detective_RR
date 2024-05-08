@@ -2,6 +2,7 @@ Can I help you, Detective? #Secretary
 -> Choices
 
 ===Choices===
+Hmmm... #Detective
 *Did that Client tell you anything of use before they came to me? #Detective
 -> A
 *Have you heard anything about these missing people?#Detective
@@ -15,7 +16,7 @@ Not much, they asked for you and that was that. #Secretary
 -> Choices
 
 ===B===
-Not a word, it’s  also  really weird that none of the other Bobbies on the case got you involved sooner.#Secretary
+Not a word, it’s really strange that none of the other Bobbies on the case got you involved sooner.#Secretary
 ->Choices
 
 ===C===

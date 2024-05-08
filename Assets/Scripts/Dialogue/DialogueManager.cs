@@ -211,7 +211,7 @@ public class DialogueManager : MonoBehaviour
         currentStory.ChooseChoiceIndex(choice.index);
         RefreshChoiceView();
         DisplayNextLine();
-        //DisplayNextLine();
+        DisplayNextLine();
 
 
     }

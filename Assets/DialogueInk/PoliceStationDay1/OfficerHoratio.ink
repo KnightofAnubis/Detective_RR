@@ -2,6 +2,7 @@ Can I help you, Detective? #Horatio
 -> Choices
 
 ===Choices===
+Hmmm...#Detective
 *Have you heard anything about these missing women? #Detective
 -> A
 *What do you know about the recent murder?#Detective

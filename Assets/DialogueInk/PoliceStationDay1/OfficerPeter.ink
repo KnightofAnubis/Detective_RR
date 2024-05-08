@@ -2,6 +2,7 @@ Can I help you, Sir? #Peter
 -> Choices
 
 ===Choices===
+Hmmm...#Detective
 *Was there a patrol this morning? #Detective
 -> A
 *Have you heard anything about these missing people?#Detective

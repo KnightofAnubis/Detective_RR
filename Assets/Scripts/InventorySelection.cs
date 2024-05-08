@@ -7,7 +7,8 @@ using UnityEngine.UI;
 public class InventorySelection : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
     [SerializeField] private GameObject slot;
-
+    [SerializeField] private GameObject clue;
+    [SerializeField] private GameObject info;
     public void OnPointerEnter(PointerEventData eventData)
     {
         // mouse over items and it turns cursor different and disbles player movement
