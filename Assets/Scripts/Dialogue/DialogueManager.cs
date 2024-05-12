@@ -6,6 +6,7 @@ using Ink.Runtime;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 using static Unity.Burst.Intrinsics.Arm;
+using Unity.VisualScripting;
 
 public class DialogueManager : MonoBehaviour
 {
@@ -42,7 +43,9 @@ public class DialogueManager : MonoBehaviour
     public bool dialogueIsPlaying { get; private set; }
 
     Image m_image;
-    
+
+    private bool isAddingRichTextTag = false;
+   
 
     private static DialogueManager instance;
 
@@ -76,7 +79,12 @@ public class DialogueManager : MonoBehaviour
             return;
         }
 
-        if (Input.GetKeyDown(KeyCode.Space))
+        
+    }
+
+    public void OnClick()
+    {
+        if (canContinueToNextLine)
         {
             DisplayNextLine();
         }
@@ -121,12 +129,16 @@ public class DialogueManager : MonoBehaviour
 
         canContinueToNextLine = false;
 
-        bool isAddingRichTextTag = false;
+        
 
         // display each letter one at a time
         foreach (char letter in line.ToCharArray())
         {
+             if (Input.GetKeyDown(KeyCode.Space))
+             {
+                _textField.maxVisibleCharacters++;
 
+             }
             // check for rich text tag, if found, add it without waiting
             if (letter == '<' || isAddingRichTextTag)
             {
@@ -136,6 +148,7 @@ public class DialogueManager : MonoBehaviour
                     isAddingRichTextTag = false;
                 }
             }
+            
             // if not rich text, add the next letter and wait a small time
             else
             {
@@ -147,7 +160,7 @@ public class DialogueManager : MonoBehaviour
 
         // actions to take after the entire line has finished displaying
 
-
+        isAddingRichTextTag = false;
         canContinueToNextLine = true;
         continueIcon.SetActive(true);
     }
