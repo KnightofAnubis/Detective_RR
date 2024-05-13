@@ -2,10 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class ClickClues : MonoBehaviour
 {
     private Camera _mainCamera;
+    
     
 
     private void Awake()
@@ -25,12 +27,13 @@ public class ClickClues : MonoBehaviour
 
         if(rayHit.collider.gameObject.name == "Note")
         {
+            CharacterMovement.instance.OnDisable();
             SaveInventory.Instance.Note.SetActive(true);
             SaveInventory.Instance.noteInfo.SetActive(true);
             Destroy(rayHit.collider.gameObject);
         }
-
        
+
     }
 
 }

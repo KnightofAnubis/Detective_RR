@@ -9,21 +9,30 @@ EditorBuildSettings:
     path: Assets/Scenes/MainMenu.unity
     guid: 3488a074bc385a34194e2478e4e0395a
   - enabled: 1
-    path: Assets/Scenes/Detective'sOffice.unity
+    path: Assets/Scenes/Day1/Detective'sOffice.unity
     guid: 71e13c5dbabaf574abc52fe664d036bd
   - enabled: 1
-    path: Assets/Scenes/PoliceStation.unity
+    path: Assets/Scenes/Day1/Office.unity
+    guid: 4f5df01fc76c9784eb882bbe34b34877
+  - enabled: 1
+    path: Assets/Scenes/Day1/PoliceStation.unity
     guid: 77ad7fe4dea7b6141a16e597155bbbff
   - enabled: 1
-    path: Assets/Scenes/City.unity
+    path: Assets/Scenes/Day1/City.unity
     guid: 1bf85775b55615548b1165ca10d5ae50
   - enabled: 1
-    path: Assets/Scenes/ArthurHouse.unity
+    path: Assets/Scenes/Day1/ArthurHouse.unity
     guid: 298532d6dfcaacb45b4f84a8354a7630
+  - enabled: 1
+    path: Assets/Scenes/Day1/NightCity.unity
+    guid: 284e2893b1a2e7d4185f9a83c1b0277f
+  - enabled: 1
+    path: Assets/Scenes/Day1/NightPolice.unity
+    guid: 18e284c4de9b1cf44a13a907542cea10
+  - enabled: 1
+    path: Assets/Scenes/Day1/NightOffice.unity
+    guid: 651d7b57422af9842869612d7092eade
   - enabled: 1
     path: Assets/Scenes/Morgue.unity
     guid: 2146ee989afa55145b1770157e965b6b
-  - enabled: 0
-    path: Assets/Scenes/SampleScene.unity
-    guid: 8c9cfa26abfee488c85f1582747f6a02
   m_configObjects: {}

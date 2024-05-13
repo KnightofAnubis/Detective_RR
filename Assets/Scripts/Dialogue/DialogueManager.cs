@@ -134,11 +134,6 @@ public class DialogueManager : MonoBehaviour
         // display each letter one at a time
         foreach (char letter in line.ToCharArray())
         {
-             if (Input.GetKeyDown(KeyCode.Space))
-             {
-                _textField.maxVisibleCharacters++;
-
-             }
             // check for rich text tag, if found, add it without waiting
             if (letter == '<' || isAddingRichTextTag)
             {
@@ -148,7 +143,11 @@ public class DialogueManager : MonoBehaviour
                     isAddingRichTextTag = false;
                 }
             }
-            
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                _textField.maxVisibleCharacters++;
+                isAddingRichTextTag = false;
+            }
             // if not rich text, add the next letter and wait a small time
             else
             {

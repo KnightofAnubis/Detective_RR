@@ -22,5 +22,5 @@ We just sent people to investigate. #Horatio
 ->Choices
 
 ===C===
-Everyone in Ravensworth frequents local bar called ________. #Horatio
+Everyone in Ravensworth frequents local bar called Royal Oak. #Horatio
 ->Choices

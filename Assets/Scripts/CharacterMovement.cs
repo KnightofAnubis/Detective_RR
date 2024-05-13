@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.EventSystems;
+using UnityEngine.InputSystem;
 using UnityEngine.Tilemaps;
 using UnityEngine.UIElements;
 
@@ -14,12 +16,31 @@ public class CharacterMovement : MonoBehaviour
     
     private Animator anim;
     private Vector3 destination;
+    private Vector3 last;
 
+    [Header("Sprite Directions")]
+    [SerializeField] Sprite upRight;
+    [SerializeField] Sprite upLeft;
+    [SerializeField] Sprite downLeft;
+    [SerializeField] Sprite downRight;
+
+    private SpriteRenderer image;
+
+    public static CharacterMovement instance;
+
+   
     private void Awake()
     {
+        if (instance != null)
+        {
+            Debug.Log("Warning: too many");
+
+        }
+        instance = this;
         mouseInput = new MouseInput();
 
     }
+   
 
     public void OnEnable()
     {
@@ -29,26 +50,27 @@ public class CharacterMovement : MonoBehaviour
     public void OnDisable()
     {
         mouseInput.Disable();
+        
     }
     // Start is called before the first frame update
     void Start()
     {
-        
+        image = GetComponent<SpriteRenderer>();
         destination = transform.position;
         mouseInput.Mouse.MouseClick.performed += _ => MouseClick();
+        
     }
 
     private void MouseClick()
     {
+        if (EventSystem.current.IsPointerOverGameObject()) return;
         Vector2 mousePosition = mouseInput.Mouse.MousePosition.ReadValue<Vector2>();
         mousePosition = Camera.main.ScreenToWorldPoint(mousePosition);
         Vector3Int gridPostion = groundMap.WorldToCell(mousePosition);
         if(groundMap.HasTile(gridPostion)) 
         {
             
-            destination = mousePosition;
-           
-            
+            destination = mousePosition;    
         }
        
     }
@@ -56,6 +78,7 @@ public class CharacterMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        last = transform.position;
         CheckUI();
         if (DialogueManager.GetInstance().dialogueIsPlaying)
         {
@@ -63,6 +86,22 @@ public class CharacterMovement : MonoBehaviour
         }
         if (Vector3.Distance(transform.position, destination) > 0.01f)
         {
+            if(destination.x > last.x && destination.y > last.y)
+            {
+                image.sprite = upRight;
+            }
+            else if (destination.x < last.x && destination.y > last.y)
+            {
+                image.sprite = upLeft;
+            }
+            else if (destination.x > last.x && destination.y < last.y)
+            {
+                image.sprite = downRight;
+            }
+            else if (destination.x < last.x && destination.y < last.y)
+            {
+                image.sprite = downLeft;
+            }
             transform.position = Vector3.MoveTowards(transform.position, destination, moveSpeed * Time.deltaTime);
         }
     }
@@ -73,9 +112,11 @@ public class CharacterMovement : MonoBehaviour
     }
 
     private void CheckUI()
-    {
+    {      
+        
         if (MainManager.Instance.canvas.activeInHierarchy == true)
-        {
+        { 
+           
             OnDisable();
         }
         else
@@ -83,4 +124,9 @@ public class CharacterMovement : MonoBehaviour
             OnEnable();
         }
     }
+
+    
 }
+
+
+
