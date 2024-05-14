@@ -32,7 +32,9 @@ public class DialogueManager : MonoBehaviour
     [SerializeField] Sprite DetectiveBox;
     [SerializeField] Sprite HoratioBox;
     [SerializeField] Sprite PeterBox;
-
+    [SerializeField] Sprite RandomBox;
+    [SerializeField] Sprite NurseBox;
+    [SerializeField] Sprite MorticianBox;
 
     private Story currentStory;
 
@@ -143,11 +145,12 @@ public class DialogueManager : MonoBehaviour
                     isAddingRichTextTag = false;
                 }
             }
+            /*
             if (Input.GetKeyDown(KeyCode.Space))
             {
                 _textField.maxVisibleCharacters++;
                 isAddingRichTextTag = false;
-            }
+            }*/
             // if not rich text, add the next letter and wait a small time
             else
             {
@@ -267,6 +270,21 @@ public class DialogueManager : MonoBehaviour
         {
 
             m_image.sprite = PeterBox;
+        }
+        if (currentStory.currentTags.Contains("Random"))
+        {
+
+            m_image.sprite = RandomBox;
+        }
+        if (currentStory.currentTags.Contains("Nurse"))
+        {
+
+            m_image.sprite = NurseBox;
+        }
+        if (currentStory.currentTags.Contains("Mortician"))
+        {
+
+            m_image.sprite = MorticianBox;
         }
 
     }

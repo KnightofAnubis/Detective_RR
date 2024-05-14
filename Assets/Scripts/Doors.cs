@@ -29,12 +29,12 @@ public class Doors : MonoBehaviour
         if (rayHit.collider.gameObject.name == "Door")
         {
             SceneManager.LoadScene(innerScene);
-            Destroy(rayHit.collider.gameObject);
+            
         }
         if (rayHit.collider.gameObject.name == "Clock")
         {
             SceneManager.LoadScene(innerScene);
-            Destroy(rayHit.collider.gameObject);
+            
         }
 
 

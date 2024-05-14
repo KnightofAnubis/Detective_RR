@@ -13,7 +13,7 @@ Hmmm...#Detective
 -> END
 ===A===
 There are women missing?#Horatio
-Yes, a client came in and said there are several women missing. #Detective
+Yes, a client came in and said there were two women missing. One has turned up dead now. #Detective
 Sorry, I can't say I've heard anything. #Horatio
 -> Choices
 

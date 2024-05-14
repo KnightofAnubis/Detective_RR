@@ -16,10 +16,10 @@ Yup, they found a body over by the park. Real nasty stuff, murder. #Peter
 -> Choices
 
 ===B===
-No, but have you heard about the rats attacking people? #Peter
+No, but hey, you look like an observant fellow. Have you heard anything about rats attacking people? #Peter
 Rats? #Detective
-Yeah, a bunch of people have been reporting into the hospital recently with rat bites on their ankles. #Peter
-Can’t say that I have heard anything, but the last thing we need is another plague right now. I’ll keep an eye out for rats I guess. #Detective
+You heard me,  a bunch of people have been reporting into the hospital recently with rat bites on their ankles. #Peter
+Can’t say that I have heard anything, but the last thing we need is another plague right now.  I’ll be on the watch then, maybe it will relate to my case. #Detective
 ->Choices
 
 ===C===

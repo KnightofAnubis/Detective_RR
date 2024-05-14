@@ -24,7 +24,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Day1/ArthurHouse.unity
     guid: 298532d6dfcaacb45b4f84a8354a7630
   - enabled: 1
-    path: Assets/Scenes/Day1/NightCity.unity
+    path: Assets/Scenes/Day1/AfternoonCity.unity
     guid: 284e2893b1a2e7d4185f9a83c1b0277f
   - enabled: 1
     path: Assets/Scenes/Day1/NightPolice.unity
@@ -33,6 +33,21 @@ EditorBuildSettings:
     path: Assets/Scenes/Day1/NightOffice.unity
     guid: 651d7b57422af9842869612d7092eade
   - enabled: 1
-    path: Assets/Scenes/Morgue.unity
+    path: Assets/Scenes/Day1/NightCity.unity
+    guid: 6df2ace04db0e3f4ebdb90647b1a78ec
+  - enabled: 1
+    path: Assets/Scenes/Day1/Hospital.unity
+    guid: e1ab841662f97d14da9843514afb86a5
+  - enabled: 1
+    path: Assets/Scenes/Day2/Day2Office.unity
+    guid: 235ac6ea2da3eea4698210718f6b8cbe
+  - enabled: 1
+    path: Assets/Scenes/Day2/Day2Police.unity
+    guid: b21be73d997e13e4fac11f00663fa5db
+  - enabled: 1
+    path: Assets/Scenes/Day2/Day2City.unity
+    guid: c7fc8ab3b600d814c81b7c66197820a6
+  - enabled: 1
+    path: Assets/Scenes/Day2/Morgue.unity
     guid: 2146ee989afa55145b1770157e965b6b
   m_configObjects: {}

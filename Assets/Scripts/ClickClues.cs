@@ -32,7 +32,28 @@ public class ClickClues : MonoBehaviour
             SaveInventory.Instance.noteInfo.SetActive(true);
             Destroy(rayHit.collider.gameObject);
         }
-       
+        if (rayHit.collider.gameObject.name == "Glass")
+        {
+            CharacterMovement.instance.OnDisable();
+            SaveInventory.Instance.Glass.SetActive(true);
+            SaveInventory.Instance.glassInfo.SetActive(true);
+            Destroy(rayHit.collider.gameObject);
+        }
+        if (rayHit.collider.gameObject.name == "Cloth")
+        {
+            CharacterMovement.instance.OnDisable();
+            SaveInventory.Instance.Cloth.SetActive(true);
+            SaveInventory.Instance.clothInfo.SetActive(true);
+            Destroy(rayHit.collider.gameObject);
+        }
+        if (rayHit.collider.gameObject.name == "Vein")
+        {
+            CharacterMovement.instance.OnDisable();
+            SaveInventory.Instance.Vein.SetActive(true);
+            SaveInventory.Instance.veinInfo.SetActive(true);
+            Destroy(rayHit.collider.gameObject);
+        }
+
 
     }
 

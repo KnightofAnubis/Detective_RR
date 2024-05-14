@@ -10,7 +10,18 @@ public class SaveInventory : MonoBehaviour
     [SerializeField] public GameObject Note;
     [SerializeField] public GameObject noteInfo;
 
+    [Header("Clue 2")]
+    [SerializeField] public GameObject Glass;
+    [SerializeField] public GameObject glassInfo;
     public static SaveInventory Instance;
+
+    [Header("Clue 3")]
+    [SerializeField] public GameObject Cloth;
+    [SerializeField] public GameObject clothInfo;
+
+    [Header("Clue 4")]
+    [SerializeField] public GameObject Vein;
+    [SerializeField] public GameObject veinInfo;
 
     void Start()
     {
