@@ -14,7 +14,7 @@ public class DialogueManager : MonoBehaviour
     [SerializeField] private GameObject dialoguePanel;
     [SerializeField] private TextMeshProUGUI _textField;
     [SerializeField] private GameObject continueIcon;
-    [SerializeField] private float typingSpeed = 0.01f;
+    [SerializeField] private float typingSpeed = 0.03f;
 
     [Header("Choices UI")]
     [SerializeField]
@@ -35,6 +35,9 @@ public class DialogueManager : MonoBehaviour
     [SerializeField] Sprite RandomBox;
     [SerializeField] Sprite NurseBox;
     [SerializeField] Sprite MorticianBox;
+    [SerializeField] Sprite JackBox;
+    [SerializeField] Sprite ScottBox;
+    [SerializeField] Sprite BarBox;
 
     private Story currentStory;
 
@@ -285,6 +288,21 @@ public class DialogueManager : MonoBehaviour
         {
 
             m_image.sprite = MorticianBox;
+        }
+        if (currentStory.currentTags.Contains("Scott"))
+        {
+
+            m_image.sprite = ScottBox;
+        }
+        if (currentStory.currentTags.Contains("Jack"))
+        {
+
+            m_image.sprite = JackBox;
+        }
+        if (currentStory.currentTags.Contains("Bar"))
+        {
+
+            m_image.sprite = BarBox;
         }
 
     }

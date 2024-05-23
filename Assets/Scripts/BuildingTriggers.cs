@@ -1,54 +1,63 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 
 public class BuildingTriggers : MonoBehaviour
 {
-    [Header("Visual Cue")]
-    [SerializeField] private GameObject visualcue;
+    
 
-    [Header("Scene")]
-    [SerializeField] private string nextScene;
+  
 
-    private bool playerInRange;
+    private Camera _mainCamera;
+
+
 
     private void Awake()
     {
-        playerInRange = false;
-        visualcue.SetActive(false);
+        _mainCamera = Camera.main;
+
     }
 
-    private void Update()
+    public void OnClick(InputAction.CallbackContext context)
     {
-        if (playerInRange && !DialogueManager.GetInstance().dialogueIsPlaying)
-        {
-            visualcue.SetActive(true);
-            if (Input.GetKeyDown(KeyCode.E))
-            {
-                SceneManager.LoadScene(nextScene);
+        if (!context.started) return;
 
-            }
-        }
-        else
+        var rayHit = Physics2D.GetRayIntersection(_mainCamera.ScreenPointToRay(pos: (Vector3)Mouse.current.position.ReadValue()));
+        if (!rayHit.collider) return;
+
+        Debug.Log(rayHit.collider.gameObject.name);
+
+        if (rayHit.collider.gameObject.name == "Arthur")
         {
-            visualcue.SetActive(false);
+            SceneManager.LoadScene("ArthurHouse");
+
         }
+
+        if (rayHit.collider.gameObject.name == "PoliceStation")
+        {
+            SceneManager.LoadScene("NightPolice");
+
+        }
+        if (rayHit.collider.gameObject.name == "Hospital")
+        {
+            SceneManager.LoadScene("Hospital");
+
+        }
+        if (rayHit.collider.gameObject.name == "Morgue")
+        {
+            SceneManager.LoadScene("Morgue");
+
+        }
+        if (rayHit.collider.gameObject.name == "Bar")
+        {
+            SceneManager.LoadScene("Bar");
+
+        }
+
+
     }
 
-    private void OnTriggerEnter2D(Collider2D collider)
-    {
-        if (collider.gameObject.tag == "Player")
-        {
-            playerInRange = true;
-        }
-    }
-
-    private void OnTriggerExit2D(Collider2D collider)
-    {
-        if (collider.gameObject.tag == "Player")
-        {
-            playerInRange = false;
-        }
-    }
 }

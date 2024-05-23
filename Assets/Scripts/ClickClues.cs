@@ -30,7 +30,7 @@ public class ClickClues : MonoBehaviour
             CharacterMovement.instance.OnDisable();
             SaveInventory.Instance.Note.SetActive(true);
             SaveInventory.Instance.noteInfo.SetActive(true);
-            Destroy(rayHit.collider.gameObject);
+            //Destroy(rayHit.collider.gameObject);
         }
         if (rayHit.collider.gameObject.name == "Glass")
         {

@@ -24,7 +24,7 @@ public class Doors : MonoBehaviour
         var rayHit = Physics2D.GetRayIntersection(_mainCamera.ScreenPointToRay(pos: (Vector3)Mouse.current.position.ReadValue()));
         if (!rayHit.collider) return;
 
-        //Debug.Log(rayHit.collider.gameObject.name);
+        Debug.Log(rayHit.collider.gameObject.name);
 
         if (rayHit.collider.gameObject.name == "Door")
         {
@@ -33,7 +33,15 @@ public class Doors : MonoBehaviour
         }
         if (rayHit.collider.gameObject.name == "Clock")
         {
-            SceneManager.LoadScene(innerScene);
+            if(SaveInventory.Instance.veinInfo.activeSelf == true)
+            {
+                SceneManager.LoadScene("Day3");
+            }
+            else
+            {
+                 SceneManager.LoadScene("Day2Office");
+            }
+            
             
         }
 

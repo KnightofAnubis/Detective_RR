@@ -315,7 +315,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: 21300000, guid: 467acbfe2f88b264db8518fad6e70cd6, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 47a4334320a8407428df31c453fa2cef, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -414,7 +414,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 3
-  m_Sprite: {fileID: 21300000, guid: 60c92b4bb0014364bbcff00640af80a8, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 37a57cd6b773fe9429f26f8e20c66b83, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -635,7 +635,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 3
-  m_Sprite: {fileID: 21300000, guid: 60c92b4bb0014364bbcff00640af80a8, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 37a57cd6b773fe9429f26f8e20c66b83, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -753,7 +753,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 3
-  m_Sprite: {fileID: 21300000, guid: a74a09d6dd38fb44f9c261f693415dd8, type: 3}
+  m_Sprite: {fileID: 21300000, guid: ae4fdf3f45cf0694a9f001bae42f7dfa, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1101,7 +1101,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 3
-  m_Sprite: {fileID: 21300000, guid: 2495ae0a9848f164d98bd25f34b14472, type: 3}
+  m_Sprite: {fileID: 21300000, guid: db3ae6dadbb59514bbf21a14078bc26e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1178,7 +1178,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f677917752c7cf5449fcfe3c7b14c952, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nextScene: Morgue
+  nextScene: GraveYard
 --- !u!4 &621728320
 Transform:
   m_ObjectHideFlags: 0
@@ -2243,7 +2243,10 @@ MonoBehaviour:
   PeterBox: {fileID: 0}
   RandomBox: {fileID: 0}
   NurseBox: {fileID: 0}
-  MorticianBox: {fileID: 21300000, guid: ca55b50a25ba67a49a0db23d1b8c3efd, type: 3}
+  MorticianBox: {fileID: 21300000, guid: ece5f47e8f8b20f4b8fdf3f289c4cc28, type: 3}
+  JackBox: {fileID: 0}
+  ScottBox: {fileID: 0}
+  BarBox: {fileID: 0}
 --- !u!4 &1303489393
 Transform:
   m_ObjectHideFlags: 0
@@ -2653,7 +2656,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 3
-  m_Sprite: {fileID: 21300000, guid: 60c92b4bb0014364bbcff00640af80a8, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 37a57cd6b773fe9429f26f8e20c66b83, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 1
   m_FlipY: 0
@@ -4097,7 +4100,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 3
-  m_Sprite: {fileID: 21300000, guid: f3fcb6389a4feb3408d21812d8ac3589, type: 3}
+  m_Sprite: {fileID: 21300000, guid: f3540de05ff884140b3c01845d58bdfc, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

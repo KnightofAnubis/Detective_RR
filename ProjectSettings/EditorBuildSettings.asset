@@ -50,4 +50,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Day2/Morgue.unity
     guid: 2146ee989afa55145b1770157e965b6b
+  - enabled: 1
+    path: Assets/Scenes/Day2/GraveYard.unity
+    guid: c4410e33c62ba734eadd42d53eaaa880
+  - enabled: 1
+    path: Assets/Scenes/Day2/Bar.unity
+    guid: f11b10a4c3b66b0419388f5a2e3c2e6d
+  - enabled: 1
+    path: Assets/Scenes/Day2/Day2Night.unity
+    guid: 1afa792cd0c592746afc668265416b75
   m_configObjects: {}
