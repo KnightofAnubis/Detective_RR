@@ -32,6 +32,8 @@ It’s ummm… it’s a rag from the bar. Oh no, is that my vomit on it. The bar
 I don’t know what happened next. I woke up outside the bar. #Jack
 I went home and... and she was gone. I thought she just decided to leave me. How I wish that was true now. #Jack
 Please excuse me. #Jack
+
 Goodbye. #Detective
 ->END
+
 

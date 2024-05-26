@@ -9,12 +9,21 @@ public class Doors : MonoBehaviour
 
     private Camera _mainCamera;
     [SerializeField] private string innerScene;
+    [SerializeField] private GameObject officer;
 
 
     private void Awake()
     {
         _mainCamera = Camera.main;
 
+    }
+
+    private void Start()
+    {
+        if (SaveInventory.Instance.veinInfo.activeSelf == true)
+        {
+            officer.SetActive(false);
+        }
     }
 
     public void OnClick(InputAction.CallbackContext context)

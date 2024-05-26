@@ -5,8 +5,8 @@ using TMPro;
 using Ink.Runtime;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
-using static Unity.Burst.Intrinsics.Arm;
-using Unity.VisualScripting;
+
+
 
 public class DialogueManager : MonoBehaviour
 {
@@ -27,6 +27,8 @@ public class DialogueManager : MonoBehaviour
     public bool ArthurEnter = false;
     public bool ArthurExit = false;
     public bool Detective = false;
+    public bool Door = false;
+    //dialogue boxes
     [SerializeField] Sprite secretaryBox;
     [SerializeField] Sprite ArthurBox;
     [SerializeField] Sprite DetectiveBox;
@@ -38,6 +40,24 @@ public class DialogueManager : MonoBehaviour
     [SerializeField] Sprite JackBox;
     [SerializeField] Sprite ScottBox;
     [SerializeField] Sprite BarBox;
+    [SerializeField] Sprite Civilian1Box;
+    [SerializeField] Sprite Civilian2Box;
+    [SerializeField] Sprite Civilian3Box;
+
+    //audio clips
+    AudioSource audioSource;
+    [SerializeField] AudioClip DetectiveAudio;
+    [SerializeField] AudioClip SecretaryAudio;
+    [SerializeField] AudioClip ArthurAudio;
+    [SerializeField] AudioClip HoratioAudio;
+    [SerializeField] AudioClip PeterAudio;
+    [SerializeField] AudioClip NurseAudio;
+    [SerializeField] AudioClip BarAudio;
+    [SerializeField] AudioClip MorticianAudio;
+    [SerializeField] AudioClip JackAudio;
+    [SerializeField] AudioClip Civilian1Audio;
+    [SerializeField] AudioClip Civilian2Audio;
+    [SerializeField] AudioClip Civilian3Audio;
 
     private Story currentStory;
 
@@ -57,11 +77,16 @@ public class DialogueManager : MonoBehaviour
     private void Awake()
     {
         if (instance != null)
-        {
+        { 
+            Destroy(gameObject);
             Debug.Log("Warning: too many");
+            return;
+            
             
         }
-        instance = this; 
+        instance = this;
+        DontDestroyOnLoad(gameObject);
+       
     }
 
     public static DialogueManager GetInstance()
@@ -74,6 +99,7 @@ public class DialogueManager : MonoBehaviour
         dialogueIsPlaying = false;
         dialoguePanel.SetActive(false);
         m_image = dialoguePanel.GetComponent<Image>();
+        audioSource = GetComponent<AudioSource>();
 
     }
 
@@ -168,6 +194,7 @@ public class DialogueManager : MonoBehaviour
         isAddingRichTextTag = false;
         canContinueToNextLine = true;
         continueIcon.SetActive(true);
+        audioSource.Stop();
     }
 
     public void DisplayNextLine()
@@ -249,30 +276,35 @@ public class DialogueManager : MonoBehaviour
         {
             
             m_image.sprite = secretaryBox;
+            audioSource.PlayOneShot(SecretaryAudio);
         }
 
         if (currentStory.currentTags.Contains("Arthur"))
         {
            
             m_image.sprite = ArthurBox;
+            audioSource.PlayOneShot(ArthurAudio);
         }
 
         if (currentStory.currentTags.Contains("Detective"))
         {
             
             m_image.sprite = DetectiveBox;
+            audioSource.PlayOneShot(DetectiveAudio);
         }
 
         if (currentStory.currentTags.Contains("Horatio"))
         {
 
             m_image.sprite = HoratioBox;
+            audioSource.PlayOneShot(HoratioAudio);
         }
 
         if (currentStory.currentTags.Contains("Peter"))
         {
 
             m_image.sprite = PeterBox;
+            audioSource.PlayOneShot(PeterAudio);
         }
         if (currentStory.currentTags.Contains("Random"))
         {
@@ -283,11 +315,13 @@ public class DialogueManager : MonoBehaviour
         {
 
             m_image.sprite = NurseBox;
+            audioSource.PlayOneShot(NurseAudio);
         }
         if (currentStory.currentTags.Contains("Mortician"))
         {
 
             m_image.sprite = MorticianBox;
+            audioSource.PlayOneShot(MorticianAudio);
         }
         if (currentStory.currentTags.Contains("Scott"))
         {
@@ -298,11 +332,36 @@ public class DialogueManager : MonoBehaviour
         {
 
             m_image.sprite = JackBox;
+            audioSource.PlayOneShot(JackAudio);
         }
         if (currentStory.currentTags.Contains("Bar"))
         {
 
             m_image.sprite = BarBox;
+            audioSource.PlayOneShot(BarAudio);
+        }
+        if (currentStory.currentTags.Contains("Civilian1"))
+        {
+
+            m_image.sprite = Civilian1Box;
+            audioSource.PlayOneShot(Civilian1Audio);
+        }
+        if (currentStory.currentTags.Contains("Civilian2"))
+        {
+
+            m_image.sprite = Civilian2Box;
+            audioSource.PlayOneShot(Civilian2Audio);
+        }
+        if (currentStory.currentTags.Contains("Civilian3"))
+        {
+
+            m_image.sprite = Civilian3Box;
+            audioSource.PlayOneShot(Civilian3Audio);
+        }
+        if (currentStory.currentTags.Contains("Door"))
+        {
+
+            Door = true;
         }
 
     }

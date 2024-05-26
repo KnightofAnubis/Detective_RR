@@ -3,13 +3,13 @@ Can I help you, Detective? #Horatio
 
 ===Choices===
 Hmmm...#Detective
-*Have you heard anything about these missing women? #Detective
+*Have you heard anything about these missing women? 
 -> A
-*What do you know about the recent murder?#Detective
+*What do you know about the recent murder?
 -> B
-*Why does your breathe smell like whiskey?#Detective
+*Why does your breath smell like whiskey?
 -> C
-*Goodbye. #Detective
+*Goodbye. 
 -> END
 ===A===
 There are women missing?#Horatio
@@ -22,5 +22,6 @@ We just sent people to investigate. #Horatio
 ->Choices
 
 ===C===
-Everyone in Ravensworth frequents local bar called Royal Oak. #Horatio
+Everyone in Ravensworth frequents a local bar called Royal Oak. #Horatio
 ->Choices
+

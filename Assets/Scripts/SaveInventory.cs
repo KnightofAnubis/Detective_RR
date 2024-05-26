@@ -6,6 +6,9 @@ using UnityEngine.SceneManagement;
 public class SaveInventory : MonoBehaviour
 {
     // Start is called before the first frame update
+    [SerializeField] public GameObject Empty;
+    [SerializeField] public GameObject notEmpty;
+
     [Header("Clue 1")]
     [SerializeField] public GameObject Note;
     [SerializeField] public GameObject noteInfo;

@@ -7,12 +7,17 @@ using UnityEngine.SceneManagement;
 public class ClickClues : MonoBehaviour
 {
     private Camera _mainCamera;
-    
-    
+
+    AudioSource _source;
+    [SerializeField] AudioClip noteAudio;
+    [SerializeField] AudioClip glassAudio;
+    [SerializeField] AudioClip handAudio;
+    [SerializeField] AudioClip veinAudio;
 
     private void Awake()
     {
         _mainCamera = Camera.main;
+        _source = GetComponent<AudioSource>();
         
     }
 
@@ -28,6 +33,11 @@ public class ClickClues : MonoBehaviour
         if(rayHit.collider.gameObject.name == "Note")
         {
             CharacterMovement.instance.OnDisable();
+            SaveInventory.Instance.Empty.SetActive(false);
+            SaveInventory.Instance.notEmpty.SetActive(true);
+
+            _source.PlayOneShot(noteAudio);
+
             SaveInventory.Instance.Note.SetActive(true);
             SaveInventory.Instance.noteInfo.SetActive(true);
             //Destroy(rayHit.collider.gameObject);
@@ -37,6 +47,8 @@ public class ClickClues : MonoBehaviour
             CharacterMovement.instance.OnDisable();
             SaveInventory.Instance.Glass.SetActive(true);
             SaveInventory.Instance.glassInfo.SetActive(true);
+            _source.PlayOneShot(glassAudio);
+
             Destroy(rayHit.collider.gameObject);
         }
         if (rayHit.collider.gameObject.name == "Cloth")
@@ -44,6 +56,8 @@ public class ClickClues : MonoBehaviour
             CharacterMovement.instance.OnDisable();
             SaveInventory.Instance.Cloth.SetActive(true);
             SaveInventory.Instance.clothInfo.SetActive(true);
+            _source.PlayOneShot(handAudio);
+
             Destroy(rayHit.collider.gameObject);
         }
         if (rayHit.collider.gameObject.name == "Vein")
@@ -51,6 +65,8 @@ public class ClickClues : MonoBehaviour
             CharacterMovement.instance.OnDisable();
             SaveInventory.Instance.Vein.SetActive(true);
             SaveInventory.Instance.veinInfo.SetActive(true);
+            _source.PlayOneShot(veinAudio);
+
             Destroy(rayHit.collider.gameObject);
         }
 

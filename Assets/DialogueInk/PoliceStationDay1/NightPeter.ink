@@ -3,23 +3,26 @@ Can I help you, Sir? #Peter
 
 ===Choices===
 Hmmm...#Detective
-*What are you doing here? #Detective
+*What are you doing here?
 -> A
-*Do you know where Officer Pembroke is?#Detective
+*Do you know where Officer Pembroke is?
 -> B
-*How are the rats?#Detective
+*How are the rats?
 -> C
-*Goodbye. #Detective
+*Goodbye. 
 -> END
 ===A===
 I'm on night watch, getting ready to go on patrol. #Peter
 -> Choices
 
 ===B===
-He was supposed to he here with me. Haven't seen him since this morning. #Peter
+He was supposed to be here with me. Haven't seen him since this morning. #Peter
 
 ->Choices
 
 ===C===
 Saw one scurry down the road on my way back here, nasty little things. #Peter
 ->Choices
+
+
+

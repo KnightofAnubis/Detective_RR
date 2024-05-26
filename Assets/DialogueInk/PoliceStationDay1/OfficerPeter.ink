@@ -3,13 +3,13 @@ Can I help you, Sir? #Peter
 
 ===Choices===
 Hmmm...#Detective
-*Was there a patrol this morning? #Detective
+*Was there a patrol this morning? 
 -> A
-*Have you heard anything about these missing people?#Detective
+*Have you heard anything about these missing people?
 -> B
-*Do you know anything that would help with this case?#Detective
+*Do you know anything that would help with this case?
 -> C
-*Goodbye. #Detective
+*Goodbye. 
 -> END
 ===A===
 Yup, they found a body over by the park. Real nasty stuff, murder. #Peter
@@ -17,8 +17,11 @@ Yup, they found a body over by the park. Real nasty stuff, murder. #Peter
 
 ===B===
 No, but hey, you look like an observant fellow. Have you heard anything about rats attacking people? #Peter
+
 Rats? #Detective
+
 You heard me,  a bunch of people have been reporting into the hospital recently with rat bites on their ankles. #Peter
+
 Can’t say that I have heard anything, but the last thing we need is another plague right now.  I’ll be on the watch then, maybe it will relate to my case. #Detective
 ->Choices
 

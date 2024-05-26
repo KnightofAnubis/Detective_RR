@@ -1,14 +1,15 @@
-Bartender, May I ask you a few Questions about what's been going on around town? #Detective
+Bartender, may I ask you a few questions about what's been going on around town? #Detective
+
 Are you a Detective? How... interesting. #Bar
-These townsfolk seemed adamant on not getting you involved. #Bar
-Please Detective... ask away. #BAr 
+I thought we had all given up on authorities lifting a finger to help. But looks like there is still some hope.  #Bar
+Please Detective... ask away. #Bar 
 ->Choices
 
 ===Choices===
 hmm... #Detective
 *Maria was here the night before she disappeared. What happened between her and her husband.
 -> A
-*Can you tell me what happened with Cassie?
+*Can you tell me what happened with Cassandra Campbell?
 ->B
 *Seems the murderer would have to frequent the bar often and wait for these types of opportunities.
 ->C

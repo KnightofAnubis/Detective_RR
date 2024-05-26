@@ -1,4 +1,6 @@
 Do you know anything about the missing people? #Detective
-Sorry, I heard about a body being found this morning at the park. That’s all I've heard about this whole thing. I feel really bad for her husband. #Random
+
+I heard about Mary’s body being found this morning at the park. That’s all I’ve heard about this whole thing. I can’t imagine the pain her husband, Jack, is feeling right now… #Civilian1
+
 Goodbye. #Detective
 ->END
