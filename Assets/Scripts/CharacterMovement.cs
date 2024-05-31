@@ -18,13 +18,7 @@ public class CharacterMovement : MonoBehaviour
     private Vector3 destination;
     private Vector3 last;
 
-    [Header("Sprite Directions")]
-    [SerializeField] Sprite upRight;
-    [SerializeField] Sprite upLeft;
-    [SerializeField] Sprite downLeft;
-    [SerializeField] Sprite downRight;
-
-    private SpriteRenderer image;
+   
 
     public static CharacterMovement instance;
 
@@ -55,9 +49,10 @@ public class CharacterMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        image = GetComponent<SpriteRenderer>();
+       
         destination = transform.position;
         mouseInput.Mouse.MouseClick.performed += _ => MouseClick();
+        anim = GetComponent<Animator>();
         
     }
 
@@ -88,19 +83,23 @@ public class CharacterMovement : MonoBehaviour
         {
             if(destination.x > last.x && destination.y > last.y)
             {
-                image.sprite = upRight;
+                //northeast
+                anim.SetTrigger("NorthEast");
             }
             else if (destination.x < last.x && destination.y > last.y)
             {
-                image.sprite = upLeft;
+                //northwest
+                anim.SetTrigger("NorthWest");
             }
             else if (destination.x > last.x && destination.y < last.y)
             {
-                image.sprite = downRight;
+                //southeast
+                anim.SetTrigger("SouthEast");
             }
             else if (destination.x < last.x && destination.y < last.y)
             {
-                image.sprite = downLeft;
+                //southwest
+                anim.SetTrigger("SouthWest");
             }
             transform.position = Vector3.MoveTowards(transform.position, destination, moveSpeed * Time.deltaTime);
         }

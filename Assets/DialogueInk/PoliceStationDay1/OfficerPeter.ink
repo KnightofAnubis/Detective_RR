@@ -26,5 +26,5 @@ Can’t say that I have heard anything, but the last thing we need is another pl
 ->Choices
 
 ===C===
-The Case? Oh, the murder! Not much, but I know Old Man Arthur's daughter went missing and her husband has been drowning himself over at the Royal Oak. #Peter
+The Case? Oh, the murder! Not much, but I know Old Man Arthur's daughter went missing. #Peter
 ->Choices
