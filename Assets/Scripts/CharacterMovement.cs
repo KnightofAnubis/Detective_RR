@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.EventSystems;
@@ -21,6 +22,7 @@ public class CharacterMovement : MonoBehaviour
    
 
     public static CharacterMovement instance;
+    private bool canPlay;
 
    
     private void Awake()
@@ -54,6 +56,7 @@ public class CharacterMovement : MonoBehaviour
         mouseInput.Mouse.MouseClick.performed += _ => MouseClick();
         anim = GetComponent<Animator>();
         
+
     }
 
     private void MouseClick()
@@ -73,6 +76,7 @@ public class CharacterMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
         last = transform.position;
         CheckUI();
         if (DialogueManager.GetInstance().dialogueIsPlaying)
@@ -81,28 +85,57 @@ public class CharacterMovement : MonoBehaviour
         }
         if (Vector3.Distance(transform.position, destination) > 0.01f)
         {
-            if(destination.x > last.x && destination.y > last.y)
+            canPlay = true;
+            if (canPlay)
             {
-                //northeast
-                anim.SetTrigger("NorthEast");
+                 if(destination.x > last.x && destination.y > last.y)
+                 {
+                    //northeast
+                    anim.ResetTrigger("NorthWest");
+                    anim.ResetTrigger("SouthWest");
+                    anim.ResetTrigger("SouthEast");
+              
+                    anim.SetTrigger("NorthEast");
+                
+                 }
+                else if (destination.x < last.x && destination.y > last.y)
+                {
+                    //northwest
+                    anim.ResetTrigger("NorthEast");
+                    anim.ResetTrigger("SouthWest");
+                    anim.ResetTrigger("SouthEast");
+                    anim.SetTrigger("NorthWest");
+                }
+                else if (destination.x > last.x && destination.y < last.y)
+                {
+                    //southeast
+                    anim.ResetTrigger("NorthWest");
+                    anim.ResetTrigger("SouthWest");
+                    anim.ResetTrigger("NorthEast");
+                    anim.SetTrigger("SouthEast");
+                }
+                else if (destination.x < last.x && destination.y < last.y)
+                {
+                    //southwest
+                    anim.ResetTrigger("NorthWest");
+                    anim.ResetTrigger("NorthEast");
+                    anim.ResetTrigger("SouthEast");
+                    anim.SetTrigger("SouthWest");
+                }
+                         
             }
-            else if (destination.x < last.x && destination.y > last.y)
-            {
-                //northwest
-                anim.SetTrigger("NorthWest");
-            }
-            else if (destination.x > last.x && destination.y < last.y)
-            {
-                //southeast
-                anim.SetTrigger("SouthEast");
-            }
-            else if (destination.x < last.x && destination.y < last.y)
-            {
-                //southwest
-                anim.SetTrigger("SouthWest");
-            }
+            
+            //reset
+            
+            
             transform.position = Vector3.MoveTowards(transform.position, destination, moveSpeed * Time.deltaTime);
+            
         }
+        if(!canPlay)
+        {
+            anim.SetTrigger("idol");
+        }
+        canPlay = false; 
     }
 
     private void OnCollisionStay2D(Collision2D collision)
