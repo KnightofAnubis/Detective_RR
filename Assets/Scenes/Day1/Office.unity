@@ -1683,6 +1683,74 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1001 &178500514
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 858504100654138304, guid: 101757a419752cf468b99f5e759bf07a, type: 3}
+      propertyPath: m_Name
+      value: Fade
+      objectReference: {fileID: 0}
+    - target: {fileID: 6828919331652057330, guid: 101757a419752cf468b99f5e759bf07a, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 960
+      objectReference: {fileID: 0}
+    - target: {fileID: 6828919331652057330, guid: 101757a419752cf468b99f5e759bf07a, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 540
+      objectReference: {fileID: 0}
+    - target: {fileID: 6828919331652057330, guid: 101757a419752cf468b99f5e759bf07a, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6828919331652057330, guid: 101757a419752cf468b99f5e759bf07a, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6828919331652057330, guid: 101757a419752cf468b99f5e759bf07a, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6828919331652057330, guid: 101757a419752cf468b99f5e759bf07a, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6828919331652057330, guid: 101757a419752cf468b99f5e759bf07a, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6828919331652057330, guid: 101757a419752cf468b99f5e759bf07a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6828919331652057330, guid: 101757a419752cf468b99f5e759bf07a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6828919331652057330, guid: 101757a419752cf468b99f5e759bf07a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 101757a419752cf468b99f5e759bf07a, type: 3}
+--- !u!114 &178500515 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2989703189099766553, guid: 101757a419752cf468b99f5e759bf07a, type: 3}
+  m_PrefabInstance: {fileID: 178500514}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f677917752c7cf5449fcfe3c7b14c952, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &235856177
 GameObject:
   m_ObjectHideFlags: 0
@@ -2286,7 +2354,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   groundMap: {fileID: 81941605}
   collisionMap: {fileID: 1363867309}
-  moveSpeed: 2
 --- !u!212 &513879669
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2696,51 +2763,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &910512765
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 910512767}
-  - component: {fileID: 910512766}
-  m_Layer: 0
-  m_Name: SceneChange
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &910512766
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 910512765}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f677917752c7cf5449fcfe3c7b14c952, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  nextScene: PoliceStation
---- !u!4 &910512767
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 910512765}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 571.9442, y: 367.68704, z: -4.1102204}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1296609162
 GameObject:
   m_ObjectHideFlags: 0
@@ -3651,7 +3673,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 910512766}
+      - m_Target: {fileID: 178500515}
         m_TargetAssemblyTypeName: SceneChange, Assembly-CSharp
         m_MethodName: OnClick
         m_Mode: 1
@@ -3940,11 +3962,11 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 291507529}
-  - {fileID: 235856178}
   - {fileID: 142066009}
   - {fileID: 513879670}
   - {fileID: 1523710508}
   - {fileID: 2019124916}
-  - {fileID: 910512767}
   - {fileID: 12480420}
   - {fileID: 238443828}
+  - {fileID: 235856178}
+  - {fileID: 178500514}

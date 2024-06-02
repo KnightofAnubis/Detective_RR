@@ -13,7 +13,7 @@ public class CharacterMovement : MonoBehaviour
     [SerializeField] private Tilemap groundMap;
     [SerializeField] private Tilemap collisionMap;
     MouseInput mouseInput;
-    [SerializeField] private float moveSpeed;
+    private float moveSpeed = 1.5f;
     
     private Animator anim;
     private Vector3 destination;
@@ -55,7 +55,7 @@ public class CharacterMovement : MonoBehaviour
         destination = transform.position;
         mouseInput.Mouse.MouseClick.performed += _ => MouseClick();
         anim = GetComponent<Animator>();
-        
+         
 
     }
 
@@ -88,6 +88,7 @@ public class CharacterMovement : MonoBehaviour
             canPlay = true;
             if (canPlay)
             {
+                 
                  if(destination.x > last.x && destination.y > last.y)
                  {
                     //northeast
@@ -131,8 +132,10 @@ public class CharacterMovement : MonoBehaviour
             transform.position = Vector3.MoveTowards(transform.position, destination, moveSpeed * Time.deltaTime);
             
         }
+        
         if(!canPlay)
         {
+            
             anim.SetTrigger("idol");
         }
         canPlay = false; 

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
+using static System.TimeZoneInfo;
 
 public class Doors : MonoBehaviour
 {
@@ -11,7 +12,8 @@ public class Doors : MonoBehaviour
     [SerializeField] private string innerScene;
     [SerializeField] private GameObject officer;
 
-
+    public Animator transition;
+    public float transitionTime = 1f;
     private void Awake()
     {
         _mainCamera = Camera.main;
@@ -37,23 +39,33 @@ public class Doors : MonoBehaviour
 
         if (rayHit.collider.gameObject.name == "Door")
         {
-            SceneManager.LoadScene(innerScene);
+            StartCoroutine(LoadLevel(innerScene));
+           
             
         }
         if (rayHit.collider.gameObject.name == "Clock")
         {
             if(SaveInventory.Instance.veinInfo.activeSelf == true)
             {
-                SceneManager.LoadScene("Day3");
+                StartCoroutine(LoadLevel("Day3"));
+                
             }
             else
             {
-                 SceneManager.LoadScene("Day2Office");
+                 StartCoroutine(LoadLevel("Day2Office"));
             }
             
             
         }
 
 
+    }
+    IEnumerator LoadLevel(string scene)
+    {
+        transition.SetTrigger("Start");
+
+        yield return new WaitForSeconds(transitionTime);
+
+        SceneManager.LoadScene(scene);
     }
 }

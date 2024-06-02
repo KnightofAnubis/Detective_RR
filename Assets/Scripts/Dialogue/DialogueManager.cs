@@ -28,6 +28,7 @@ public class DialogueManager : MonoBehaviour
     public bool ArthurExit = false;
     public bool Detective = false;
     public bool Door = false;
+    public bool end = false;
     //dialogue boxes
     [SerializeField] Sprite secretaryBox;
     [SerializeField] Sprite ArthurBox;
@@ -363,7 +364,11 @@ public class DialogueManager : MonoBehaviour
 
             Door = true;
         }
+        if (currentStory.currentTags.Contains("End"))
+        {
 
+            end = true;
+        }
     }
 }
 

@@ -1597,6 +1597,68 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &162372963
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 858504100654138304, guid: 101757a419752cf468b99f5e759bf07a, type: 3}
+      propertyPath: m_Name
+      value: Fade
+      objectReference: {fileID: 0}
+    - target: {fileID: 6828919331652057330, guid: 101757a419752cf468b99f5e759bf07a, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 960
+      objectReference: {fileID: 0}
+    - target: {fileID: 6828919331652057330, guid: 101757a419752cf468b99f5e759bf07a, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 540
+      objectReference: {fileID: 0}
+    - target: {fileID: 6828919331652057330, guid: 101757a419752cf468b99f5e759bf07a, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6828919331652057330, guid: 101757a419752cf468b99f5e759bf07a, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6828919331652057330, guid: 101757a419752cf468b99f5e759bf07a, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6828919331652057330, guid: 101757a419752cf468b99f5e759bf07a, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6828919331652057330, guid: 101757a419752cf468b99f5e759bf07a, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6828919331652057330, guid: 101757a419752cf468b99f5e759bf07a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6828919331652057330, guid: 101757a419752cf468b99f5e759bf07a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6828919331652057330, guid: 101757a419752cf468b99f5e759bf07a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 101757a419752cf468b99f5e759bf07a, type: 3}
+--- !u!95 &162372964 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 3253549849144490380, guid: 101757a419752cf468b99f5e759bf07a, type: 3}
+  m_PrefabInstance: {fileID: 162372963}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &314971964
 GameObject:
   m_ObjectHideFlags: 0
@@ -1904,6 +1966,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nextScene: NightPolice
+  transition: {fileID: 0}
+  transitionTime: 1
 --- !u!4 &440240100
 Transform:
   m_ObjectHideFlags: 0
@@ -2146,7 +2210,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   groundMap: {fileID: 4546024}
   collisionMap: {fileID: 314971970}
-  moveSpeed: 2
 --- !u!212 &600883890
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -4111,6 +4174,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   innerScene: Day2Office
   officer: {fileID: 0}
+  transition: {fileID: 162372964}
+  transitionTime: 1
 --- !u!114 &2047449591
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4191,3 +4256,4 @@ SceneRoots:
   - {fileID: 2047449592}
   - {fileID: 1969164076}
   - {fileID: 809439225}
+  - {fileID: 162372963}

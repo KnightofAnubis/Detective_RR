@@ -59,4 +59,25 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Day2/Day2Night.unity
     guid: 1afa792cd0c592746afc668265416b75
+  - enabled: 1
+    path: Assets/Scenes/Day3/Day3.unity
+    guid: c11f5d8983b7e9845be6378f08c3adb8
+  - enabled: 1
+    path: Assets/Scenes/Day3/Day3Police.unity
+    guid: 019c969b550563146b9b8e1a69415463
+  - enabled: 1
+    path: Assets/Scenes/Day3/City3.unity
+    guid: 9dcf5287c21b0764ba236f70f0c30e72
+  - enabled: 1
+    path: Assets/Scenes/Day3/ArthurDead.unity
+    guid: 2f947220990af894ea209b9a65a9007b
+  - enabled: 1
+    path: Assets/Scenes/Day3/Afternoon3.unity
+    guid: b2859e7f231471c4693c03339f7749e7
+  - enabled: 1
+    path: Assets/Scenes/Day3/Bar3.unity
+    guid: 7f794adcd8baa8749ab5dac0fbe7b5d7
+  - enabled: 1
+    path: Assets/Scenes/Day3/End.unity
+    guid: dad7b52d9813134478a1cd5c1f9a57ca
   m_configObjects: {}

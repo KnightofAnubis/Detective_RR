@@ -4,12 +4,14 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
+using static System.TimeZoneInfo;
 
 public class BuildingTriggers : MonoBehaviour
 {
-    
 
-  
+
+    public Animator transition;
+    public float transitionTime = 1f;
 
     private Camera _mainCamera;
 
@@ -32,32 +34,58 @@ public class BuildingTriggers : MonoBehaviour
 
         if (rayHit.collider.gameObject.name == "Arthur")
         {
-            SceneManager.LoadScene("ArthurHouse");
+            
+            StartCoroutine(LoadLevel("ArthurHouse"));
+
+        }
+        if (rayHit.collider.gameObject.name == "ArthurDead")
+        {
+            
+            StartCoroutine(LoadLevel("ArthurDead"));
 
         }
 
         if (rayHit.collider.gameObject.name == "PoliceStation")
         {
-            SceneManager.LoadScene("NightPolice");
+            
+            StartCoroutine(LoadLevel("NightPolice"));
 
         }
         if (rayHit.collider.gameObject.name == "Hospital")
         {
-            SceneManager.LoadScene("Hospital");
+            
+            StartCoroutine(LoadLevel("Hospital"));
 
         }
         if (rayHit.collider.gameObject.name == "Morgue")
         {
             SceneManager.LoadScene("Morgue");
+            StartCoroutine(LoadLevel("Morgue"));
 
         }
         if (rayHit.collider.gameObject.name == "Bar")
         {
             SceneManager.LoadScene("Bar");
+            StartCoroutine(LoadLevel("Bar"));
+
+        }
+        if (rayHit.collider.gameObject.name == "BarFinal")
+        {
+            SceneManager.LoadScene("Bar3");
+            StartCoroutine(LoadLevel("Bar3"));
 
         }
 
 
+
     }
 
+    IEnumerator LoadLevel(string scene)
+    {
+        transition.SetTrigger("Start");
+
+        yield return new WaitForSeconds(transitionTime);
+
+        SceneManager.LoadScene(scene);
+    }
 }
