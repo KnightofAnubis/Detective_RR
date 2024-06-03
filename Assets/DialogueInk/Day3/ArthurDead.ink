@@ -16,5 +16,5 @@ I left the body untouched, I didn’t notice anything around the body that looke
 ->Choices
 
 ===B===
-One of his neighbors went over to talk to him, opened the door, and saw him on the ground. They contacted me while I was patrolling that part of town.#Horatio 
+One of his neighbors went over to talk to him, opened the door, and saw him on the ground. They contacted me while I was patrolling that part of town.#Horatio #Door
 ->Choices

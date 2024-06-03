@@ -20,7 +20,7 @@ No, but hey, you look like an observant fellow. Have you heard anything about ra
 
 Rats? #Detective
 
-You heard me,  a bunch of people have been reporting into the hospital recently with rat bites on their ankles. #Peter
+You heard me,  a bunch of people have been reporting to the hospital recently with rat bites on their ankles. #Peter
 
 Can’t say that I have heard anything, but the last thing we need is another plague right now.  I’ll be on the watch then, maybe it will relate to my case. #Detective
 ->Choices

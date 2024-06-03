@@ -7,16 +7,18 @@ Please Detective... ask away. #Bar
 
 ===Choices===
 hmm... #Detective
-*Maria was here the night before she disappeared. What happened between her and her husband.
+*Maria was here the night before she disappeared. 
 -> A
 *Can you tell me what happened with Cassandra Campbell?
 ->B
-*Seems the murderer would have to frequent the bar often and wait for these types of opportunities.
+*Seems the murderer would have to frequent the bar often... 
 ->C
 *Goodbye.
 ->END
 
 ===A===
+What happened between her and her husband? #Detective
+
 Hmmm... that was a while ago Detective. If I remember correctly they got into an argument about something and Maria stormed off followed by Jack. #Bar 
 ->Choices
 
@@ -25,5 +27,6 @@ If I remember correctly, it was a similar scenario. She got into an argument wit
 ->Choices
 
 ===C===
+...and wait for these types of opportunities. #Detective
 Hmmm… I suppose so. #Bar 
 ->Choices

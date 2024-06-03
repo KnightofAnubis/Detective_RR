@@ -12,6 +12,9 @@ public class Doors : MonoBehaviour
     [SerializeField] private string innerScene;
     [SerializeField] private GameObject officer;
 
+    private AudioSource _audioSource;
+
+
     public Animator transition;
     public float transitionTime = 1f;
     private void Awake()
@@ -26,6 +29,7 @@ public class Doors : MonoBehaviour
         {
             officer.SetActive(false);
         }
+        _audioSource = GetComponent<AudioSource>();
     }
 
     public void OnClick(InputAction.CallbackContext context)
@@ -47,12 +51,15 @@ public class Doors : MonoBehaviour
         {
             if(SaveInventory.Instance.veinInfo.activeSelf == true)
             {
+                Debug.Log("To day 3");
+                
                 StartCoroutine(LoadLevel("Day3"));
                 
             }
             else
             {
-                 StartCoroutine(LoadLevel("Day2Office"));
+                
+                StartCoroutine(LoadLevel("Day2Office"));
             }
             
             

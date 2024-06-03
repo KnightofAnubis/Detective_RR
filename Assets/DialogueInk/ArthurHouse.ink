@@ -19,6 +19,10 @@ There are two missing women that I know of. Cassandra, my daughter, went missing
 My daughter was last seen at the bar. #Arthur
 
 Okay, seems like I’m going to have to go to the streets to get more information. Remember to stay low and I'll see you soon when I have more information. #Detective
+
+Thank you for looking into this. #Arthur
+
+Of course. #Detective #Door
 ->Choices
 
 

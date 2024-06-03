@@ -21,6 +21,8 @@ public class DialogueManager : MonoBehaviour
     private VerticalLayoutGroup _choiceButtonContainer;
     [SerializeField]
     private Button _choiceButtonPrefab;
+    [SerializeField]
+    private Button _bigchoiceButtonPrefab;
 
     [Header("Characters")]
     public bool secretary = true;
@@ -101,11 +103,12 @@ public class DialogueManager : MonoBehaviour
         dialoguePanel.SetActive(false);
         m_image = dialoguePanel.GetComponent<Image>();
         audioSource = GetComponent<AudioSource>();
-
+        
     }
 
     private void Update()
     {
+        
         if(!dialogueIsPlaying)
         {
             return;
@@ -228,6 +231,8 @@ public class DialogueManager : MonoBehaviour
 
     private void DisplayChoices()
     {
+       
+       
         if (_choiceButtonContainer.GetComponentsInChildren<Button>().Length > 0) return;
 
         for (int i = 0; i < currentStory.currentChoices.Count; i++)
@@ -237,17 +242,32 @@ public class DialogueManager : MonoBehaviour
 
             button.onClick.AddListener(() => OnClickChoiceButton(choice));
         }
+
     }
 
     Button CreateChoiceButton(string text)
-    {
-        var choiceButton = Instantiate(_choiceButtonPrefab);
-        choiceButton.transform.SetParent(_choiceButtonContainer.transform, false);
+    { 
+        if (currentStory.currentTags.Contains("Big"))
+        {
+            var choiceButton = Instantiate(_bigchoiceButtonPrefab);
+            choiceButton.transform.SetParent(_choiceButtonContainer.transform, false);
 
-        var buttonText = choiceButton.GetComponentInChildren<TMP_Text>();
-        buttonText.text = text;
+            var buttonText = choiceButton.GetComponentInChildren<TMP_Text>();
+            buttonText.text = text;
 
-        return choiceButton;
+            return choiceButton;
+        }
+        else
+        {
+            var choiceButton = Instantiate(_choiceButtonPrefab);
+            choiceButton.transform.SetParent(_choiceButtonContainer.transform, false);
+
+            var buttonText = choiceButton.GetComponentInChildren<TMP_Text>();
+            buttonText.text = text;
+
+            return choiceButton;
+        }
+       
     }
 
 

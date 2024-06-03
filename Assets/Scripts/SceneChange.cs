@@ -8,11 +8,22 @@ public class SceneChange : MonoBehaviour
     public Animator transition;
     public float transitionTime = 1f;
 
+    private Scene currentScene;
+    private string Scene;
+
+    private void Start()
+    {
+        currentScene = SceneManager.GetActiveScene();
+        Scene = currentScene.name;
+    }
+
     private void Update()
     {
-        if (DialogueManager.GetInstance().end == true)
+       
+        if (DialogueManager.GetInstance().end == true && !DialogueManager.GetInstance().dialogueIsPlaying && Scene == "Bar3")
         {
-            StartCoroutine(LoadLevel("End"));
+            Debug.Log("Ending");
+            StartCoroutine(LoadLevel(nextScene));
         }
     }
 
