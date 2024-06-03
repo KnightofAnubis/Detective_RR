@@ -26,6 +26,11 @@ public class SaveInventory : MonoBehaviour
     [SerializeField] public GameObject Vein;
     [SerializeField] public GameObject veinInfo;
 
+    [Header("Clue 5")]
+    [SerializeField] public GameObject Receipt;
+    [SerializeField] public GameObject receiptInfo;
+
+
     void Start()
     {
         if (Instance != null)

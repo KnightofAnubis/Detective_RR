@@ -70,6 +70,15 @@ public class ClickClues : MonoBehaviour
             Destroy(rayHit.collider.gameObject);
         }
 
+        if (rayHit.collider.gameObject.name == "Note")
+        {
+            
+            _source.PlayOneShot(noteAudio);
+
+            SaveInventory.Instance.Receipt.SetActive(true);
+            SaveInventory.Instance.receiptInfo.SetActive(true);
+            Destroy(rayHit.collider.gameObject);
+        }
 
     }
 
