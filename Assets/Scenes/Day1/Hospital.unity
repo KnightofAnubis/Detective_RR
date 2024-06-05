@@ -1003,7 +1003,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audioSource: {fileID: 432171467}
-  audioclip: {fileID: 8300000, guid: 33f2158456447a94fb7a943ebec281c3, type: 3}
+  audioclip: {fileID: 8300000, guid: c3bd777f5c00e8d48bc21fe7559f0214, type: 3}
 --- !u!4 &432171469
 Transform:
   m_ObjectHideFlags: 0
@@ -4052,6 +4052,11 @@ MonoBehaviour:
   glassAudio: {fileID: 8300000, guid: 697ea84dbe22e39448612622bccb57a5, type: 3}
   handAudio: {fileID: 8300000, guid: d35c5087c499def4da6d0723cdf35321, type: 3}
   veinAudio: {fileID: 8300000, guid: 825edf2b74126b14081c8ce23b233077, type: 3}
+  noteclue: 0
+  glassclue: 0
+  clothclue: 0
+  veinclue: 0
+  receiptclue: 0
 --- !u!114 &1559241897
 MonoBehaviour:
   m_ObjectHideFlags: 0

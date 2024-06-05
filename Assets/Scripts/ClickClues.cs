@@ -14,11 +14,23 @@ public class ClickClues : MonoBehaviour
     [SerializeField] AudioClip handAudio;
     [SerializeField] AudioClip veinAudio;
 
+    public bool noteclue = false;
+    public bool glassclue = false;
+    public bool clothclue = false;
+    public bool veinclue = false;
+    public bool receiptclue = false;
+
+    private Scene currentScene;
+    private string Scene;
+
+    public static ClickClues Instance;
     private void Awake()
     {
+        
+        Instance = this;
         _mainCamera = Camera.main;
         _source = GetComponent<AudioSource>();
-        
+       
     }
 
     public void OnClick(InputAction.CallbackContext context)
@@ -81,6 +93,32 @@ public class ClickClues : MonoBehaviour
             Destroy(rayHit.collider.gameObject);           
         }
 
+    }
+
+    public void Update()
+    {
+        currentScene = SceneManager.GetActiveScene();
+        Scene = currentScene.name;
+        if (Scene == "ArthurHouse" && SaveInventory.Instance.Note.activeSelf == true)
+        {
+            noteclue = true;
+        }
+        if (Scene == "Hospital" && SaveInventory.Instance.Glass.activeSelf == true)
+        {
+            glassclue = true;
+        }
+        if (Scene == "Day2Police" && SaveInventory.Instance.Cloth.activeSelf == true)
+        {
+            clothclue = true;
+        }
+        if (Scene == "Morgue" && SaveInventory.Instance.Vein.activeSelf == true)
+        {
+            veinclue = true;
+        }
+        if (Scene == "ArthurDead" && SaveInventory.Instance.Receipt.activeSelf == true)
+        {
+            receiptclue = true;
+        }
     }
 
 }
